@@ -119,10 +119,11 @@ class Mage(Player):
         target.take_damage(damage)
 
     def fireball(self, target):
-        """Special ability: Large burst of magical fire."""
-        # ✅ Adjusted damage so it's always between 10 and 50
-        damage = random.randint(20, 45)
-        target.take_damage(damage)
+    """Special ability: Large burst of magical fire."""
+    damage = random.randint(20, 50)  # generate damage
+    damage = min(50, max(10, damage))  # ensure stays between 10–50
+    target.take_damage(damage)
+
 
 
 # ------------------------------------------------------------
